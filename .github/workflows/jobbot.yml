@@ -1,0 +1,52 @@
+name: Daily Job Scraper
+
+on:
+  schedule:
+    # Runs at 7 AM UTC every day (adjust timezone in cron if needed)
+    - cron: '0 7 * * *'
+  # Allow manual trigger from GitHub UI
+  workflow_dispatch:
+
+jobs:
+  scrape-jobs:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Create .env from secrets
+        run: |
+          cat > .env << EOF
+          TELEGRAM_TOKEN=${{ secrets.TELEGRAM_TOKEN }}
+          CHAT_ID=${{ secrets.CHAT_ID }}
+          DATABASE_URL=jobs.db
+          RSS_URLS=${{ secrets.RSS_URLS }}
+          INSTAGRAM_ACCOUNTS=${{ secrets.INSTAGRAM_ACCOUNTS }}
+          JOB_KEYWORDS=${{ secrets.JOB_KEYWORDS }}
+          SCHEDULE_CRON=0 7 * * *
+          LOG_LEVEL=INFO
+          TELEGRAM_PARSE_MODE=Markdown
+          COMPANY_CAREER_PAGES=${{ secrets.COMPANY_CAREER_PAGES }}
+          EOF
+      
+      - name: Run job scraper
+        run: python main.py
+      
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: jobbot-logs
+          path: jobbot.log
+          retention-days: 7
