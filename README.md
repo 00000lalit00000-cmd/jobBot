@@ -13,13 +13,28 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-2. Copy `.env.example` to `.env` and update values:
+2. Copy `.env.example` to `.env` and update values, or use `config_secrets.py` for secret/source configuration:
 
 ```powershell
 copy .env.example .env
 ```
 
-3. Fill in `TELEGRAM_TOKEN`, `CHAT_ID`, and at least one source:
+3. Fill in the required values.
+
+Option A: Configure in `.env` as before.
+
+Option B: Create `config_secrets.py` and set the values there.
+
+The following values are supported in `config_secrets.py`:
+- `TELEGRAM_TOKEN`
+- `CHAT_ID`
+- `RSS_URLS`
+- `INSTAGRAM_ACCOUNTS`
+- `JOB_KEYWORDS`
+- `SCHEDULE_CRON`
+- `COMPANY_CAREER_PAGES`
+
+4. Fill in `TELEGRAM_TOKEN`, `CHAT_ID`, and at least one source:
 
 - `RSS_URLS` for RSS feeds
 - `INSTAGRAM_ACCOUNTS` for Instagram accounts

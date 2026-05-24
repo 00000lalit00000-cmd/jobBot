@@ -2,7 +2,7 @@ import logging
 from config import CHAT_ID, RSS_URLS, INSTAGRAM_ACCOUNTS, COMPANY_CAREER_PAGES, JOB_KEYWORDS, DATABASE_URL
 from logger import setup_logging
 from db import init_db, is_seen, save_job
-from notifier import send_message
+from notifier import broadcast_message
 from scrapers.rss_scraper import fetch_rss_jobs
 from scrapers.insta_scraper import fetch_latest_posts
 from scrapers.career_page_scraper import fetch_company_jobs
@@ -13,7 +13,7 @@ logger = setup_logging()
 def _escape_text(text):
     if not text:
         return ''
-    return text.replace('_', '\\_').replace('*', '\\*').replace('[', '\\[').replace(']', '\\]')
+    return text.replace('\\', '\\\\').replace('_', '\\_').replace('*', '\\*').replace('[', '\\[').replace(']', '\\]')
 
 
 def format_job_message(job):
@@ -34,7 +34,14 @@ def format_job_message(job):
 def job_matches(job):
     if not JOB_KEYWORDS:
         return True
-    text = ' '.join(filter(None, [job.get('title', ''), job.get('company', ''), job.get('text', '')])).lower()
+    text = ' '.join(filter(None, [
+        job.get('title', ''),
+        job.get('company', ''),
+        job.get('location', ''),
+        job.get('source', ''),
+        job.get('url', ''),
+        job.get('text', ''),
+    ])).lower()
     return any(keyword.lower() in text for keyword in JOB_KEYWORDS)
 
 
@@ -51,7 +58,7 @@ def _process_items(items):
             continue
         try:
             message = format_job_message(job)
-            send_message(CHAT_ID, message)
+            broadcast_message(message)
             save_job(job, path=DATABASE_URL)
             sent += 1
             logger.info('Sent notification for %s', job.get('id'))
