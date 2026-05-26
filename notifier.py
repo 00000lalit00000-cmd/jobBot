@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+﻿<<<<<<< HEAD
 import requests
 from config import TELEGRAM_TOKENS, CHAT_IDS, TELEGRAM_PARSE_MODE, TELEGRAM_TOKEN
 from logger import setup_logging

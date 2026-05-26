@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+﻿<<<<<<< HEAD
 import logging
 from config import CHAT_ID, RSS_URLS, INSTAGRAM_ACCOUNTS, COMPANY_CAREER_PAGES, JOB_KEYWORDS, DATABASE_URL
 from logger import setup_logging

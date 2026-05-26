@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-# jobBot — Job notification app
+﻿<<<<<<< HEAD
+# jobBot ΓÇö Job notification app
 
 Minimal app to monitor job sources (RSS feeds, Instagram accounts) and send notifications to Telegram.
 
@@ -64,7 +64,7 @@ To stop the running scheduler, press `Ctrl+C` in the PowerShell window where `se
 python -m unittest discover tests
 ```
 =======
-# jobBot — Job notification app
+# jobBot ΓÇö Job notification app
 
 Minimal app to monitor job sources (RSS feeds, Instagram accounts) and send notifications to Telegram.
 

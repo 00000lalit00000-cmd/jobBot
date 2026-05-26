@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+﻿<<<<<<< HEAD
 import logging
 from logging.handlers import RotatingFileHandler
 from config import LOG_LEVEL
