@@ -1,7 +1,0 @@
-requests
-python-dotenv
-APScheduler
-beautifulsoup4
-lxml
-instaloader
-sqlite-utils
