@@ -4658,3 +4658,113 @@ requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://ap
 2026-05-24 11:37:24,365 [INFO] jobbot: Fetched 4 jobs from company career page https://www.loreal.com/en/careers
 2026-05-24 11:37:25,249 [INFO] jobbot: Fetched 11 jobs from company career page https://www.bayer.com/en/careers
 2026-05-24 11:37:25,250 [INFO] jobbot: run_once finished, notifications sent: 0
+2026-05-26 16:21:04,610 [INFO] jobbot: Fetched 10 items from RSS https://remoteok.com/remote-jobs.rss?tags=python
+2026-05-26 16:21:05,705 [INFO] jobbot: Sent notification for 49054a0c802468ed3778d9c91315b9a34ea1ae2a
+2026-05-26 16:21:06,705 [INFO] jobbot: Sent notification for e57fc1fdb21376d8a1c8ec3c9f0d251281c6e337
+2026-05-26 16:21:07,656 [INFO] jobbot: Sent notification for e34d7f1769306dfddb1a5959ef5eeb0ad6062ca4
+2026-05-26 16:21:08,689 [INFO] jobbot: Sent notification for c5e5641182f2d206b5915b27b2b80ff16937bf51
+2026-05-26 16:21:09,664 [INFO] jobbot: Sent notification for 220e688b7c9913f93a4fbd797eb897bd0a4de709
+2026-05-26 16:21:10,612 [INFO] jobbot: Sent notification for 8c0a7b58573de75598c9c41ac843fbab4ed0fb42
+2026-05-26 16:21:11,721 [INFO] jobbot: Fetched 0 items from RSS https://remoteok.com/remote-jobs.rss?tags=developer
+2026-05-26 16:21:13,254 [INFO] jobbot: Fetched 10 items from RSS https://weworkremotely.com/categories/remote-programming-jobs.rss?query=python
+2026-05-26 16:21:14,309 [INFO] jobbot: Sent notification for 7d259b1baff0c7d1f0153e6d7f16cd39b8480c27
+2026-05-26 16:21:15,113 [INFO] jobbot: Fetched 10 items from RSS https://weworkremotely.com/categories/remote-programming-jobs.rss
+2026-05-26 16:21:16,314 [INFO] jobbot: Fetched 10 items from RSS https://remoteok.com/remote-jobs.rss
+2026-05-26 16:21:26,216 [INFO] jobbot: Fetched 0 jobs from company career page https://www.google.com/careers
+2026-05-26 16:21:27,750 [INFO] jobbot: Fetched 2 jobs from company career page https://www.amazon.jobs/
+2026-05-26 16:21:30,138 [INFO] jobbot: Fetched 0 jobs from company career page https://www.microsoft.com/en-us/careers
+2026-05-26 16:21:30,976 [INFO] jobbot: Fetched 3 jobs from company career page https://www.apple.com/careers/
+2026-05-26 16:21:37,399 [INFO] jobbot: Fetched 10 jobs from company career page https://www.meta.com/careers/
+2026-05-26 16:21:37,457 [INFO] jobbot: Fetched 0 jobs from company career page https://careers.netflix.com/
+2026-05-26 16:21:45,170 [INFO] jobbot: Fetched 2 jobs from company career page https://www.salesforce.com/company/careers/
+2026-05-26 16:21:45,210 [INFO] jobbot: Fetched 0 jobs from company career page https://careers.uber.com/
+2026-05-26 16:21:50,965 [INFO] jobbot: Fetched 0 jobs from company career page https://www.ibm.com/careers/
+2026-05-26 16:21:51,370 [INFO] jobbot: Fetched 0 jobs from company career page https://careers.intel.com/
+2026-05-26 16:21:52,374 [INFO] jobbot: Fetched 33 jobs from company career page https://www.nvidia.com/en-us/about-nvidia/careers/
+2026-05-26 16:21:55,123 [INFO] jobbot: Fetched 11 jobs from company career page https://careers.adobe.com/
+2026-05-26 16:21:55,750 [INFO] jobbot: Fetched 3 jobs from company career page https://www.oracle.com/careers/
+2026-05-26 16:22:00,942 [INFO] jobbot: Fetched 4 jobs from company career page https://careers.cisco.com/
+2026-05-26 16:22:01,519 [INFO] jobbot: Fetched 0 jobs from company career page https://jobs.slack.com/
+2026-05-26 16:22:01,615 [INFO] jobbot: Fetched 0 jobs from company career page https://jobs.github.com/
+2026-05-26 16:22:03,120 [INFO] jobbot: Fetched 4 jobs from company career page https://www.stripe.com/jobs
+2026-05-26 16:22:03,180 [INFO] jobbot: Fetched 0 jobs from company career page https://careers.spotify.com/
+2026-05-26 16:22:03,654 [INFO] jobbot: Fetched 1 jobs from company career page https://www.thoughtworks.com/careers
+2026-05-26 16:22:04,725 [INFO] jobbot: Fetched 0 jobs from company career page https://www.linkedin.com/careers/
+2026-05-26 16:22:12,552 [INFO] jobbot: Fetched 4 jobs from company career page https://careers.accenture.com/
+2026-05-26 16:22:13,209 [INFO] jobbot: Fetched 0 jobs from company career page https://careers.infosys.com/
+2026-05-26 16:22:14,600 [INFO] jobbot: Fetched 9 jobs from company career page https://careers.tcs.com/
+2026-05-26 16:22:16,610 [INFO] jobbot: Fetched 1 jobs from company career page https://www.paypal.com/us/webapps/mpp/jobs
+2026-05-26 16:22:24,670 [INFO] jobbot: Fetched 5 jobs from company career page https://careers.airbnb.com/
+2026-05-26 16:22:30,231 [INFO] jobbot: Fetched 0 jobs from company career page https://squareup.com/us/en/careers
+2026-05-26 16:22:31,311 [INFO] jobbot: Fetched 96 jobs from company career page https://www.snap.com/en-US/jobs
+2026-05-26 16:22:33,277 [INFO] jobbot: Fetched 4 jobs from company career page https://careers.zoom.us/
+2026-05-26 16:22:38,425 [INFO] jobbot: Fetched 0 jobs from company career page https://jobs.dell.com/
+2026-05-26 16:22:38,700 [INFO] jobbot: Fetched 0 jobs from company career page https://jobs.hpe.com/
+2026-05-26 16:22:39,758 [INFO] jobbot: Fetched 10 jobs from company career page https://www.hp.com/us-en/jobs.html
+2026-05-26 16:22:40,592 [INFO] jobbot: Fetched 0 jobs from company career page https://www.ebayinc.com/careers/
+2026-05-26 16:22:41,278 [INFO] jobbot: Fetched 0 jobs from company career page https://www.tesla.com/careers
+2026-05-26 16:22:41,891 [INFO] jobbot: Fetched 0 jobs from company career page https://www.spacex.com/careers
+2026-05-26 16:22:46,214 [INFO] jobbot: Fetched 3 jobs from company career page https://www.dropbox.com/jobs
+2026-05-26 16:22:46,805 [INFO] jobbot: Fetched 0 jobs from company career page https://www.qualcomm.com/company/careers
+2026-05-26 16:22:50,352 [INFO] jobbot: Fetched 1 jobs from company career page https://www.amd.com/en/corporate/careers
+2026-05-26 16:22:53,286 [INFO] jobbot: Fetched 1 jobs from company career page https://careers.pinterest.com/
+2026-05-26 16:22:54,911 [INFO] jobbot: Fetched 117 jobs from company career page https://www.redditinc.com/careers
+2026-05-26 16:22:56,033 [INFO] jobbot: Sent notification for 9d6e2bcff80fd1c297c9fa6a480d5843f0306451
+2026-05-26 16:22:57,533 [INFO] jobbot: Fetched 0 jobs from company career page https://www.doordash.com/careers/
+2026-05-26 16:23:01,152 [INFO] jobbot: Fetched 0 jobs from company career page https://www.lyft.com/careers
+2026-05-26 16:23:02,800 [INFO] jobbot: Fetched 5 jobs from company career page https://www.instacart.com/careers
+2026-05-26 16:23:11,192 [INFO] jobbot: Fetched 12 jobs from company career page https://www.wayfair.com/careers
+2026-05-26 16:23:11,810 [INFO] jobbot: Fetched 8 jobs from company career page https://corporate.target.com/careers
+2026-05-26 16:23:23,597 [INFO] jobbot: Fetched 6 jobs from company career page https://careers.walmart.com/
+2026-05-26 16:23:38,623 [INFO] jobbot: Fetched 0 jobs from company career page https://www.alibabagroup.com/en/global/careers
+2026-05-26 16:23:53,647 [INFO] jobbot: Fetched 0 jobs from company career page https://www.baidu.com/more/joinus.html
+2026-05-26 16:23:55,672 [INFO] jobbot: Fetched 0 jobs from company career page https://careers.tencent.com/en-us/home
+2026-05-26 16:24:00,043 [INFO] jobbot: Fetched 0 jobs from company career page https://www.samsungcareers.com/
+2026-05-26 16:24:01,013 [INFO] jobbot: Fetched 2 jobs from company career page https://www.sony.com/en/SonyInfo/Careers/
+2026-05-26 16:24:02,567 [INFO] jobbot: Fetched 0 jobs from company career page https://www.lg.com/global/careers
+2026-05-26 16:24:04,249 [INFO] jobbot: Fetched 0 jobs from company career page https://www.huawei.com/en/careers
+2026-05-26 16:24:07,950 [INFO] jobbot: Fetched 0 jobs from company career page https://www.philips.com/a-w/careers.html
+2026-05-26 16:24:09,550 [INFO] jobbot: Fetched 13 jobs from company career page https://www.nokia.com/about-us/careers/
+2026-05-26 16:24:15,781 [INFO] jobbot: Fetched 0 jobs from company career page https://www.siemens.com/global/en/company/jobs.html
+2026-05-26 16:24:18,701 [INFO] jobbot: Fetched 0 jobs from company career page https://www.bosch-career.com/
+2026-05-26 16:24:20,528 [INFO] jobbot: Fetched 0 jobs from company career page https://www.jnj.com/careers
+2026-05-26 16:24:23,176 [INFO] jobbot: Fetched 10 jobs from company career page https://www.pepsicojobs.com/main/
+2026-05-26 16:24:26,781 [INFO] jobbot: Fetched 2 jobs from company career page https://www.coca-colacompany.com/careers
+2026-05-26 16:24:32,411 [INFO] jobbot: Fetched 3 jobs from company career page https://jobs.nike.com/
+2026-05-26 16:24:34,400 [INFO] jobbot: Fetched 1 jobs from company career page https://careers.adidas-group.com/
+2026-05-26 16:24:40,022 [INFO] jobbot: Fetched 4 jobs from company career page https://www.mcdonalds.com/us/en-us/careers.html
+2026-05-26 16:24:41,341 [INFO] jobbot: Fetched 1 jobs from company career page https://www.starbucks.com/careers
+2026-05-26 16:24:42,711 [INFO] jobbot: Fetched 0 jobs from company career page https://www.mastercard.com/en-us/careers.html
+2026-05-26 16:24:43,502 [INFO] jobbot: Fetched 0 jobs from company career page https://www.visa.com/careers.html
+2026-05-26 16:24:48,083 [INFO] jobbot: Fetched 0 jobs from company career page https://www.americanexpress.com/careers/
+2026-05-26 16:24:48,175 [INFO] jobbot: Fetched 0 jobs from company career page https://jobs.capitalone.com/
+2026-05-26 16:24:51,299 [INFO] jobbot: Fetched 1 jobs from company career page https://www.chase.com/careers
+2026-05-26 16:24:53,645 [INFO] jobbot: Fetched 3 jobs from company career page https://careers.bankofamerica.com/
+2026-05-26 16:24:54,440 [INFO] jobbot: Fetched 1 jobs from company career page https://www.jpmorganchase.com/careers
+2026-05-26 16:24:54,875 [INFO] jobbot: Fetched 2 jobs from company career page https://www.goldmansachs.com/careers/
+2026-05-26 16:24:55,491 [INFO] jobbot: Fetched 0 jobs from company career page https://www.morganstanley.com/people/careers
+2026-05-26 16:24:56,277 [INFO] jobbot: Fetched 0 jobs from company career page https://www.citigroup.com/citi/careers/
+2026-05-26 16:24:57,149 [INFO] jobbot: Fetched 2 jobs from company career page https://www.wellsfargo.com/about/careers/
+2026-05-26 16:24:58,154 [INFO] jobbot: Fetched 27 jobs from company career page https://jobs.boeing.com/
+2026-05-26 16:24:59,107 [INFO] jobbot: Sent notification for 334ebfcc36e0b4045871809dce6277dd8d7cf7c7
+2026-05-26 16:25:00,034 [INFO] jobbot: Fetched 21 jobs from company career page https://www.airbus.com/careers.html
+2026-05-26 16:25:02,355 [INFO] jobbot: Fetched 5 jobs from company career page https://www.lockheedmartin.com/en-us/careers.html
+2026-05-26 16:25:10,358 [INFO] jobbot: Fetched 0 jobs from company career page https://www.northropgrumman.com/careers/
+2026-05-26 16:25:12,261 [INFO] jobbot: Fetched 2 jobs from company career page https://www.raytheon.com/careers
+2026-05-26 16:25:13,960 [INFO] jobbot: Fetched 6 jobs from company career page https://www.ge.com/careers
+2026-05-26 16:25:16,857 [INFO] jobbot: Fetched 0 jobs from company career page https://www.honeywell.com/en-us/careers
+2026-05-26 16:25:17,595 [INFO] jobbot: Fetched 1 jobs from company career page https://www.3m.com/3M/en_US/careers-us/
+2026-05-26 16:25:18,057 [INFO] jobbot: Fetched 0 jobs from company career page https://www.sap.com/careers.html
+2026-05-26 16:25:33,142 [INFO] jobbot: Fetched 0 jobs from company career page https://careers.vmware.com/
+2026-05-26 16:25:35,632 [INFO] jobbot: Fetched 4 jobs from company career page https://www.servicenow.com/careers.html
+2026-05-26 16:25:36,455 [INFO] jobbot: Fetched 17 jobs from company career page https://www.atlassian.com/company/careers
+2026-05-26 16:25:37,805 [INFO] jobbot: Fetched 16 jobs from company career page https://www.zendesk.com/company/careers/
+2026-05-26 16:25:38,404 [INFO] jobbot: Fetched 24 jobs from company career page https://www.shopify.com/careers
+2026-05-26 16:25:41,127 [INFO] jobbot: Fetched 2 jobs from company career page https://www.onepeloton.com/careers
+2026-05-26 16:25:42,422 [INFO] jobbot: Fetched 8 jobs from company career page https://asana.com/jobs
+2026-05-26 16:25:45,071 [INFO] jobbot: Fetched 6 jobs from company career page https://monday.com/careers
+2026-05-26 16:25:48,252 [INFO] jobbot: Fetched 1 jobs from company career page https://www.canva.com/careers/
+2026-05-26 16:25:49,082 [INFO] jobbot: Fetched 85 jobs from company career page https://www.notion.so/careers
+2026-05-26 16:25:49,882 [INFO] jobbot: Sent notification for 6dfa3a2327c57cae44cfa3da51d1b9ccb6101426
+2026-05-26 16:25:50,567 [INFO] jobbot: Fetched 21 jobs from company career page https://www.hubspot.com/careers
+2026-05-26 16:25:53,355 [INFO] jobbot: Fetched 6 jobs from company career page https://www.coinbase.com/careers

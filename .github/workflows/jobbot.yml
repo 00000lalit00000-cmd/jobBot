@@ -20,6 +20,57 @@ jobs:
         with:
           python-version: '3.11'
       
+      - name: Restore jobs.db from last successful run
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_REF_NAME: ${{ github.ref_name }}
+        run: |
+          python - <<'PY'
+          import json, os, urllib.request, urllib.error, zipfile
+          repo = os.environ['GITHUB_REPOSITORY']
+          branch = os.environ.get('GITHUB_REF_NAME') or 'main'
+          token = os.environ['GITHUB_TOKEN']
+          headers = {
+              'Authorization': f'Bearer {token}',
+              'Accept': 'application/vnd.github+json',
+              'User-Agent': 'jobbot-action'
+          }
+          def fetch_json(url):
+              req = urllib.request.Request(url, headers=headers)
+              with urllib.request.urlopen(req, timeout=30) as resp:
+                  return json.loads(resp.read().decode())
+          workflow_file = 'jobbot.yml'
+          runs_url = f'https://api.github.com/repos/{repo}/actions/workflows/{workflow_file}/runs?branch={branch}&status=success&per_page=5'
+          runs = fetch_json(runs_url).get('workflow_runs', [])
+          if not runs:
+              print('No previous successful workflow runs found; continuing without restore.')
+              raise SystemExit(0)
+          run_id = runs[0].get('id')
+          if not run_id:
+              print('No valid run id found; continuing without restore.')
+              raise SystemExit(0)
+          artifacts_url = f'https://api.github.com/repos/{repo}/actions/runs/{run_id}/artifacts'
+          artifacts = fetch_json(artifacts_url).get('artifacts', [])
+          artifact_id = None
+          for artifact in artifacts:
+              if artifact.get('name') == 'jobbot-db':
+                  artifact_id = artifact.get('id')
+                  break
+          if not artifact_id:
+              print('No previous jobbot-db artifact found; continuing without restore.')
+              raise SystemExit(0)
+          download_url = f'https://api.github.com/repos/{repo}/actions/artifacts/{artifact_id}/zip'
+          req = urllib.request.Request(download_url, headers=headers)
+          with urllib.request.urlopen(req, timeout=60) as resp:
+              data = resp.read()
+          with open('jobbot-db.zip', 'wb') as fh:
+              fh.write(data)
+          with zipfile.ZipFile('jobbot-db.zip') as zf:
+              zf.extractall('.')
+          print('Restored previous jobs.db from jobbot-db artifact.')
+          PY
+      
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -50,3 +101,12 @@ jobs:
           name: jobbot-logs
           path: jobbot.log
           retention-days: 7
+      
+      - name: Upload jobs.db state
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jobbot-db
+          path: jobs.db
+          if-no-files-found: ignore
+          retention-days: 30

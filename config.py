@@ -8,6 +8,13 @@ def _split_list(value):
     return [item.strip() for item in value.split(',') if item.strip()]
 
 
+def _load_list_from_file(filename):
+    if not os.path.isfile(filename):
+        return []
+    with open(filename, encoding='utf-8') as fh:
+        return [line.strip() for line in fh if line.strip() and not line.strip().startswith('#')]
+
+
 def _normalize_database_url(value):
     if not value:
         return 'jobs.db'
@@ -21,9 +28,9 @@ def _normalize_database_url(value):
 TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN', '')
 CHAT_ID = os.getenv('CHAT_ID', '')
 DATABASE_URL = _normalize_database_url(os.getenv('DATABASE_URL', 'jobs.db'))
-RSS_URLS = _split_list(os.getenv('RSS_URLS', ''))
+RSS_URLS = _split_list(os.getenv('RSS_URLS', '')) or _load_list_from_file('rss_urls.txt')
 INSTAGRAM_ACCOUNTS = _split_list(os.getenv('INSTAGRAM_ACCOUNTS', ''))
-COMPANY_CAREER_PAGES = _split_list(os.getenv('COMPANY_CAREER_PAGES', ''))
+COMPANY_CAREER_PAGES = _split_list(os.getenv('COMPANY_CAREER_PAGES', '')) or _load_list_from_file('company_career_pages.txt')
 JOB_KEYWORDS = _split_list(os.getenv('JOB_KEYWORDS', 'job,developer,engineer'))
 SCHEDULE_CRON = os.getenv('SCHEDULE_CRON', '0 7 * * *')
 SCRAPE_INTERVAL_MINUTES = int(os.getenv('SCRAPE_INTERVAL_MINUTES', '15'))

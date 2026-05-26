@@ -23,7 +23,15 @@ copy .env.example .env
 
 - `RSS_URLS` for RSS feeds
 - `INSTAGRAM_ACCOUNTS` for Instagram accounts
+- `COMPANY_CAREER_PAGES` for company career pages
 - `JOB_KEYWORDS` to filter matching posts
+
+If `RSS_URLS` or `COMPANY_CAREER_PAGES` are not set in `.env`, the app will use the default fallback lists:
+
+- `rss_urls.txt` — contains 200 RSS/feed sources
+- `company_career_pages.txt` — contains 400 company career page URLs
+
+These fallback files are loaded from `config.py` when the corresponding environment variables are empty.
 
 4. Run the notifier once:
 
