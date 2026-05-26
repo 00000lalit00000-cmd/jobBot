@@ -2,8 +2,8 @@ name: Daily Job Scraper
 
 on:
   schedule:
-    # Runs at 7 AM UTC every day (adjust timezone in cron if needed)
-    - cron: '0 7 * * *'
+    # Runs at 7 AM IST (UTC+5:30) every day — cron uses UTC
+    - cron: '30 1 * * *'
   # Allow manual trigger from GitHub UI
   workflow_dispatch:
 
@@ -34,7 +34,7 @@ jobs:
           RSS_URLS=${{ secrets.RSS_URLS }}
           INSTAGRAM_ACCOUNTS=${{ secrets.INSTAGRAM_ACCOUNTS }}
           JOB_KEYWORDS=${{ secrets.JOB_KEYWORDS }}
-          SCHEDULE_CRON=0 7 * * *
+          SCHEDULE_CRON=30 1 * * *
           LOG_LEVEL=INFO
           TELEGRAM_PARSE_MODE=Markdown
           COMPANY_CAREER_PAGES=${{ secrets.COMPANY_CAREER_PAGES }}
