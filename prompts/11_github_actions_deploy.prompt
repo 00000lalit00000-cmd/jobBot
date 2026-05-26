@@ -1,0 +1,14 @@
+Create a GitHub Actions workflow to deploy the jobBot Python app and run it every day at 7 AM UTC.
+
+The workflow should:
+- trigger on schedule and manual dispatch
+- checkout the repository
+- set up Python 3.14
+- install dependencies from requirements.txt
+- create a .env file from repository secrets
+- run python main.py
+- upload logs as artifacts for debugging
+
+Use the following repo secrets: TELEGRAM_TOKEN, CHAT_ID, RSS_URLS, INSTAGRAM_ACCOUNTS, COMPANY_CAREER_PAGES, JOB_KEYWORDS.
+
+Also note that GitHub Actions runners are ephemeral, so local SQLite state (jobs.db) does not persist between runs unless external persistence is added.

@@ -1,0 +1,46 @@
+Configure advanced job filtering for jobBot with language, location, work mode, and skills preferences.
+
+## Configuration Options
+
+Add these to your .env file to customize job filtering:
+
+**LANGUAGE**
+- Default: english
+- Filter jobs by language (useful for job boards with mixed languages)
+
+**PREFERRED_LOCATIONS** (comma-separated)
+- Example: Pune, Mumbai, Bangalore
+- Only jobs matching these locations will be sent
+- Leave empty to accept all locations
+
+**PREFERRED_WORK_MODES** (comma-separated)
+- Options: remote, hybrid, office
+- Example: remote,hybrid (sends remote and hybrid jobs, excluding office-only)
+- Leave empty to accept all work modes
+
+**PREFERRED_SKILLS** (comma-separated)
+- Example: Python,React,Node.js,Java,Angular
+- Only jobs mentioning these skills will be sent
+- Leave empty to accept all skill requirements
+
+## Notification Format
+
+With these settings enabled, notifications now include:
+- **Role:** Job title
+- **Company:** Company name
+- **Skills:** Required or preferred technical skills
+- **Location:** Job location/city
+- **Work Mode:** Remote, Hybrid, or Office
+- **Source:** Where the job was found
+
+## Example Notification
+
+```
+*Senior Python Developer*
+Company: Tech Company Inc
+Location: Bangalore
+Skills: Python, Django, PostgreSQL, Docker
+Work Mode: Remote
+Source: Career Page
+https://example.com/jobs/123
+```
