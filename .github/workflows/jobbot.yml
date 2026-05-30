@@ -31,7 +31,7 @@ jobs:
           GITHUB_REF_NAME: ${{ github.ref_name }}
         run: |
           python - <<'PY'
-          import json, os, urllib.request, urllib.error, zipfile
+          import json, os, subprocess, urllib.request, urllib.error, zipfile
           repo = os.environ['GITHUB_REPOSITORY']
           branch = os.environ.get('GITHUB_REF_NAME') or 'main'
           token = os.environ['GITHUB_TOKEN']
@@ -66,21 +66,14 @@ jobs:
               print('No previous jobbot-db artifact found; continuing without restore.')
               raise SystemExit(0)
           download_url = f'https://api.github.com/repos/{repo}/actions/artifacts/{artifact_id}/zip'
-          class PreserveAuthRedirectHandler(urllib.request.HTTPRedirectHandler):
-              def redirect_request(self, req, fp, code, msg, headers, newurl):
-                  newreq = super().redirect_request(req, fp, code, msg, headers, newurl)
-                  if newreq is None:
-                      return None
-                  auth = req.get_header('Authorization')
-                  if auth:
-                      newreq.add_header('Authorization', auth)
-                  return newreq
-          opener = urllib.request.build_opener(PreserveAuthRedirectHandler())
-          req = urllib.request.Request(download_url, headers=headers)
-          with opener.open(req, timeout=60) as resp:
-              data = resp.read()
-          with open('jobbot-db.zip', 'wb') as fh:
-              fh.write(data)
+          curl_cmd = [
+              'curl', '-L', '--location-trusted',
+              '-H', f'Authorization: Bearer {token}',
+              '-H', 'Accept: application/vnd.github+json',
+              download_url,
+              '-o', 'jobbot-db.zip'
+          ]
+          subprocess.run(curl_cmd, check=True)
           with zipfile.ZipFile('jobbot-db.zip') as zf:
               zf.extractall('.')
           print('Restored previous jobs.db from jobbot-db artifact.')
