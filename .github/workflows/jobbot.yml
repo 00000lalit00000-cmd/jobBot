@@ -66,8 +66,18 @@ jobs:
               print('No previous jobbot-db artifact found; continuing without restore.')
               raise SystemExit(0)
           download_url = f'https://api.github.com/repos/{repo}/actions/artifacts/{artifact_id}/zip'
+          class PreserveAuthRedirectHandler(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self, req, fp, code, msg, headers, newurl):
+                  newreq = super().redirect_request(req, fp, code, msg, headers, newurl)
+                  if newreq is None:
+                      return None
+                  auth = req.get_header('Authorization')
+                  if auth:
+                      newreq.add_header('Authorization', auth)
+                  return newreq
+          opener = urllib.request.build_opener(PreserveAuthRedirectHandler())
           req = urllib.request.Request(download_url, headers=headers)
-          with urllib.request.urlopen(req, timeout=60) as resp:
+          with opener.open(req, timeout=60) as resp:
               data = resp.read()
           with open('jobbot-db.zip', 'wb') as fh:
               fh.write(data)
