@@ -67,13 +67,21 @@ jobs:
               raise SystemExit(0)
           download_url = f'https://api.github.com/repos/{repo}/actions/artifacts/{artifact_id}/zip'
           curl_cmd = [
-              'curl', '-L', '--location-trusted',
+              'curl', '-fSL', '--location-trusted',
               '-H', f'Authorization: Bearer {token}',
-              '-H', 'Accept: application/vnd.github+json',
+              '-H', 'Accept: application/octet-stream',
               download_url,
               '-o', 'jobbot-db.zip'
           ]
           subprocess.run(curl_cmd, check=True)
+          with open('jobbot-db.zip', 'rb') as fh:
+              signature = fh.read(4)
+          if signature != b'PK\x03\x04':
+              with open('jobbot-db.zip', 'rb') as fh:
+                  content = fh.read(1024)
+              print('Downloaded artifact is not a zip file. First bytes:')
+              print(content[:1024].decode('utf-8', errors='replace'))
+              raise SystemExit('Artifact download failed: received non-zip response')
           with zipfile.ZipFile('jobbot-db.zip') as zf:
               zf.extractall('.')
           print('Restored previous jobs.db from jobbot-db artifact.')
