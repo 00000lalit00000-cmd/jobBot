@@ -1,5 +1,9 @@
 name: Daily Job Scraper
 
+permissions:
+  contents: read
+  actions: read
+
 on:
   schedule:
     # Runs at 7 AM IST (UTC+5:30) every day — cron uses UTC
